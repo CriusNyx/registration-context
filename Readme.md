@@ -6,7 +6,7 @@ Registration Context provides a lightweight API that children can use to registe
 
 It provides a convenient way for children to hoist registration information up to their parents.
 
-## Example
+##
 
 ```tsx
 const [MyContextProvider, useRegisterMyValue, useMyValues] = createRegistrationContext<string>();
@@ -25,7 +25,6 @@ function Parent(){
 }
 
 function Child(){
-
   useRegisterMyValue("I'm a child");
 
   return <p>I register myself</p>;
