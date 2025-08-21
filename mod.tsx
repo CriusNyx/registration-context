@@ -1,11 +1,10 @@
 import {
   Provider as JotaiProvider,
   atom,
-  useAtom,
   useAtomValue,
   useSetAtom,
 } from "jotai";
-import { PropsWithChildren, useEffect, useMemo, useState } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 import uuid from "uuid";
 import _ from "lodash";
 

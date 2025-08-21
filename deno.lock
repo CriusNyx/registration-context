@@ -3,7 +3,6 @@
   "specifiers": {
     "jsr:@std/assert@1": "1.0.14",
     "jsr:@std/internal@^1.0.10": "1.0.10",
-    "npm:@types/lodash@^4.17.20": "4.17.20",
     "npm:@types/react@^19.1.10": "19.1.10",
     "npm:jotai@^2.13.1": "2.13.1",
     "npm:lodash@^4.17.21": "4.17.21",
@@ -22,9 +21,6 @@
     }
   },
   "npm": {
-    "@types/lodash@4.17.20": {
-      "integrity": "sha512-H3MHACvFUEiujabxhaI/ImO6gUrd8oOurg7LQtS7mbwIXA/cUqWrvBsaeJ23aZEPk1TAYkurjfMbSELfoCXlGA=="
-    },
     "@types/react@19.1.10": {
       "integrity": "sha512-EhBeSYX0Y6ye8pNebpKrwFJq7BoQ8J5SO6NlvNwwHjSj6adXJViPQrKlsyPw7hLBLvckEMO1yxeGdR82YBBlDg==",
       "dependencies": [
@@ -51,7 +47,6 @@
   "workspace": {
     "dependencies": [
       "jsr:@std/assert@1",
-      "npm:@types/lodash@^4.17.20",
       "npm:@types/react@^19.1.10",
       "npm:jotai@^2.13.1",
       "npm:lodash@^4.17.21",
