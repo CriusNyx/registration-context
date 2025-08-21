@@ -4,7 +4,7 @@ import {
   useAtomValue,
   useSetAtom,
 } from "jotai";
-import { PropsWithChildren, useEffect, useState } from "react";
+import { FC, PropsWithChildren, useEffect, useState } from "react";
 import uuid from "uuid";
 import _ from "lodash";
 
@@ -16,9 +16,13 @@ interface CreateRegistrationContextOpts<T> {
   comparatorFunction?<T>(): number;
 }
 
+type RegistrationProvider = FC<PropsWithChildren>;
+type UseRegisterValue<T> = (value: T) => void;
+type UseValues<T> = () => T[];
+
 export function createRegistrationContext<T>(
   opts: CreateRegistrationContextOpts<T> = {}
-) {
+): [RegistrationProvider, UseRegisterValue<T>, UseValues<T>] {
   type State = { [key: string]: T };
 
   const stateAtom = atom<State>({});
