@@ -20,6 +20,24 @@ type RegistrationProvider = FC<PropsWithChildren>;
 type UseRegisterValue<T> = (value: T) => void;
 type UseValues<T> = () => T[];
 
+/** Create a new registration context for the specified type T
+ *
+ * @example const [MyProvider, useRegisterMyValue, useMyValues] = createRegistrationContext<String>();
+ *
+ * @example
+ * // MyProvider will host the registration context internally
+ * // If no provider is present then the component will be global.
+ * return <MyProvider><Parent/></MyProvider>;
+ *
+ * @example
+ * // useMyValues will give the parent component access to the value of every child that registers.
+ * // If no provider is in the parent this will be global.
+ * const values = useMyValues();
+ *
+ * @example
+ * // useRegisterMyValue will make this value available to any component inside the same provider.
+ * useRegisterMyValue("Foo");
+ */
 export function createRegistrationContext<T>(
   opts: CreateRegistrationContextOpts<T> = {}
 ): [RegistrationProvider, UseRegisterValue<T>, UseValues<T>] {
