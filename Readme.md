@@ -25,7 +25,7 @@ function Parent(){
 }
 
 function Child(){
-  useRegisterMyValue("I'm a child");
+  useRegisterMyValue("I was registered from the child");
 
   return <p>I register myself</p>;
 }
@@ -37,7 +37,7 @@ The above example will render the following react tree
 <Host>
   <MyContextProvider>
   <Parent>
-    <p>I'm a child</p>
+    <p>I was registered from the child</p>
     <Child>
       <p>I register myself</p>
     </Child>
