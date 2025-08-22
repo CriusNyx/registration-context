@@ -3,18 +3,29 @@
   "version": "0.1.1",
   "exports": "./mod.ts",
   "tasks": {
-    "dev": "deno test --watch"
+    "test": "deno test --allow-env"
   },
   "license": "MIT",
   "imports": {
-    "@std/assert": "jsr:@std/assert@1",
-    "@types/react": "npm:@types/react@^19.1.10",
+    "@b-fuze/deno-dom": "jsr:@b-fuze/deno-dom@^0.1.56",
+    "@std/assert": "jsr:@std/assert@^1.0.14",
+    "@std/expect": "jsr:@std/expect@^1.0.17",
+    "@testing-library/dom": "npm:@testing-library/dom@^10.4.1",
+    "@testing-library/react": "npm:@testing-library/react@^16.3.0",
+    "@types/react": "npm:@types/react@^19.1.11",
+    "@types/react-dom": "npm:@types/react-dom@^19.1.7",
+    "happy-dom": "npm:happy-dom@^18.0.1",
     "jotai": "npm:jotai@^2.13.1",
+    "js-dom": "npm:js-dom@^0.0.1",
+    "jsdom": "npm:jsdom@^26.1.0",
     "lodash": "npm:lodash@^4.17.21",
     "react": "npm:react@^19.1.1",
-    "uuid": "npm:uuid@^11.1.0"
+    "uuid": "npm:uuid@^11.1.0",
+    "zustand": "npm:zustand@^5.0.8"
   },
   "compilerOptions": {
-    "jsx": "react-jsx"
-  }
+    "jsx": "react-jsx",
+    "lib": ["deno.window", "dom"]
+  },
+  "nodeModulesDir": "auto"
 }

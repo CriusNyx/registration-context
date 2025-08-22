@@ -1,11 +1,11 @@
 import {
-  Provider as JotaiProvider,
   atom,
-  useAtomValue,
   useSetAtom,
+  useAtomValue,
+  Provider as JotaiProvider,
 } from "jotai";
 import { FC, PropsWithChildren, useEffect, useState } from "react";
-import uuid from "uuid";
+import * as uuid from "uuid";
 import _ from "lodash";
 
 function nextId() {
@@ -56,7 +56,11 @@ export function createRegistrationContext<T>(
     useEffect(() => {
       setState((prev) => ({ ...prev, [id]: value }));
       return () => {
-        setState((prev) => _.omit(prev, id));
+        setState((prev) => {
+          const output = { ...prev };
+          delete output[id];
+          return output;
+        });
       };
     }, [value]);
   }
